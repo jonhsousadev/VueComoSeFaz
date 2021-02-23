@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            height: 100vh;
+        }
+        
+        #app {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <title>Vue como se faz 01 - Exercício</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Gerador de Links de Whatsapp</h1>
+        <div>
+            <input type="phone" v-model='telefone' placeholder="telefone">
+            <button @click="geraLink">Gerar Link</button>
+        </div>
+        <span>
+            Seu Link do Whatsapp é: <a v-if="link" :href="link">Clique para acessar!</a>
+        </span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                telefone: '',
+                link: ''
+            },
+            methods: {
+                geraLink() {
+                    console.log(this.telefone);
+                    if (this.telefone !== '')
+                        this.link = `https://api.whatsapp.com/send?phone=${this.telefone}`
+                    console.log(this.link)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
