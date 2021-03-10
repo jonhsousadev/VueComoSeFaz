@@ -1,0 +1,28 @@
+/* Estilo Geral */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(245, 249, 247);
+}
+
+#app {
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.red {
+    color: red;
+}
